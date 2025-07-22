@@ -10,66 +10,195 @@
 </p>
 
 ---
+# 🌐 Virtual Community Support Platform
+
+**💻 TatvaSoft Summer Internship Project (2025)**  
+`Full Stack Web Application using .NET Core | Angular | PostgreSQL | AWS`
+
+> **Empowering organizations to make a meaningful difference.**
+
+---
 
 ## 📋 About the Project
 
-**Virtual Community Support Platform** is a full-stack web application built to streamline Corporate Social Responsibility (CSR) initiatives within organizations. It allows companies to create and manage community-focused missions, and enables employees to browse, participate, and track their contributions.
+The **Virtual Community Support Platform** is a **feature-rich, full-stack CSR management system** developed as part of the **TatvaSoft Summer Internship 2025**. It provides a platform for organizations to create and manage socially impactful missions, while employees can engage in volunteering opportunities that align with company goals and personal interests.
 
-Developed during the **TatvaSoft Summer Internship 2025**, this platform reflects real-world software development practices using modern technologies and cloud deployment solutions.
+> Built with modern tech stack, secure authentication, role management, and cloud deployment support.
 
 ---
 
 ## 🎯 Use Case
 
-This system helps:
+This platform simplifies **Corporate Social Responsibility (CSR)** efforts for organizations by:
 
-- **Organizations** manage CSR missions efficiently
-- **Employees** find and apply for volunteer opportunities
-- **Admins** manage users, missions, skills, and themes
+- 🏢 Allowing **admins** to manage users, missions, themes, and skills
+- 👨‍💼 Enabling **employees** to browse, filter, apply, and contribute to missions
+- 📈 Tracking community involvement with a clean and responsive UI
 
 ---
 
 ## 🚀 Key Features
 
-- 🔐 JWT-based authentication (Admin/User roles)
-- 👥 User & role management
-- 🎯 Mission creation, approval, assignment
-- 🔎 Mission listing with filters and search
-- 🧠 Skills & Themes management
-- 🖼️ Profile page with image upload
-- ☁️ Deployed on AWS (optional)
+| Category                  | Feature                                                                 |
+|---------------------------|-------------------------------------------------------------------------|
+| 🔐 Authentication          | Secure JWT-based login for Admin and Users                             |
+| 👥 Role Management         | Admin/User access separation with proper authorization logic           |
+| 🎯 Mission Control         | Create, Update, Delete missions with full filter & status options      |
+| 🔎 Search & Filter         | Smart mission listing with sorting, filters, and real-time updates     |
+| 🧠 Skills & Themes         | CRUD operations for mission themes and required skills                 |
+| 🖼️ Profile & Media Uploads | User profile management with image upload                              |
+| ☁️ Deployment Ready        | API & frontend built for deployment on AWS (EC2 + S3 support)          |
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend:** .NET Core (C#), Entity Framework Core
-- **Frontend:** Angular, TypeScript
-- **Database:** PostgreSQL
-- **Tools:** Swagger, Visual Studio Code
-- **Deployment:** AWS (EC2 for API, S3 for frontend)
+| Layer      | Technology                                      |
+|------------|-------------------------------------------------|
+| 🌐 Frontend | Angular 16, HTML5, CSS3, TypeScript              |
+| 🧠 Backend  | .NET Core Web API, Entity Framework Core         |
+| 💾 Database | PostgreSQL (Code First with Migrations)          |
+| 📦 Dev Tools| Swagger, LINQ, Visual Studio, VS Code            |
+| ☁️ Cloud    | AWS EC2 (backend), S3 (frontend) – optional      |
 
 ---
 
 ## 🧱 System Architecture
 
-- RESTful API
-- PostgreSQL DB with EF Core Code First
-- Angular client connects via HTTPClient
-- API + frontend deployable on AWS (optional)
+```
+Client (Angular)   →   API (.NET Core)   →   PostgreSQL DB
+        ↑                     ↓
+  HTTPClient         EF Core + LINQ Queries
+```
+
+- RESTful APIs with clean route structuring
+- Role-Based Access Control (RBAC)
+- Image upload folder structure maintained
+- PostgreSQL schema generated via Code First approach
 
 ---
 
+## 🧑‍💻 Project Modules Overview
 
-### 🔧 Prerequisites
+### 🔹 Admin Panel
+- Manage Missions
+- Manage Themes & Skills
+- View All Applications
+- Role-based secured access
 
-| Tool              | Purpose                  | Link                            |
-|-------------------|---------------------------|----------------------------------|
-| [.NET SDK](https://dotnet.microsoft.com/download) | Run backend |
-| [Node.js & npm](https://nodejs.org/) | Angular frontend |
-| Angular CLI | Angular commands | `npm install -g @angular/cli` |
-| [PostgreSQL](https://www.postgresql.org/download/) | Database |
-| [Git](https://git-scm.com/) | Clone project |
-| [Visual Studio Code](https://code.visualstudio.com/) | Editor |
+### 🔹 User Portal
+- View all missions
+- Apply or withdraw from a mission
+- Update profile with image
+- View applied history
+
+### 🔹 Mission System
+- Mission has details: Title, Description, Start/End Dates, Required Skills
+- Each mission linked to Skills & Themes
+- Display filters (City, Skill, Category)
+
+---
+
+## 📂 Folder Structure
+
+```
+Backend/
+└── Mission/
+    ├── Mission.Api/
+    │   ├── Controllers/
+    │   ├── Services/
+    │   ├── UploadMissionImage/
+    │   └── Program.cs
+    ├── Mission.Entities/
+    ├── Mission.Repositories/
+    └── Mission.Services/
+
+Frontend/
+└── src/
+    ├── app/
+    │   ├── components/
+    │   ├── pages/
+    │   └── services/
+    ├── assets/
+    └── environments/
+```
+
+---
+
+## 🔧 Prerequisites
+
+| Tool               | Purpose                         | Command/Link                      |
+|--------------------|----------------------------------|-----------------------------------|
+| .NET SDK           | Run backend API                 | [Download .NET](https://dotnet.microsoft.com/en-us/download) |
+| Node.js & npm      | Run Angular frontend            | [Download Node.js](https://nodejs.org/) |
+| Angular CLI        | Angular commands support        | `npm install -g @angular/cli`    |
+| PostgreSQL         | Database                        | [PostgreSQL Download](https://www.postgresql.org/) |
+| Git                | Clone & manage repo             | [Git](https://git-scm.com/)      |
+| Visual Studio Code | Code editor                     | [VS Code](https://code.visualstudio.com/) |
+
+---
+
+## ▶️ How to Run the Project Locally
+
+### 1️⃣ Run the Backend
+
+```bash
+cd Backend/Mission/Mission.Api
+dotnet restore
+dotnet run
+```
+
+Ensure PostgreSQL is running and update `appsettings.json` with your DB credentials.
+
+---
+
+### 2️⃣ Run the Frontend
+
+```bash
+cd Frontend
+npm install
+ng serve
+```
+
+Frontend will be available at: `http://localhost:4200`
+
+---
+
+## 📈 Deployment Strategy (Optional)
+
+| Layer     | Service |
+|-----------|---------|
+| API       | AWS EC2 |
+| Frontend  | AWS S3  |
+| Database  | AWS RDS (optional) |
+
+---
+
+## 🎓 Internship Summary
+
+- 🏫 **Organization**: TatvaSoft Pvt. Ltd.  
+- 📅 **Program**: Summer Internship 2025  
+- 🔧 **Duration**: 15 Days  
+- 💼 **Role**: Full Stack Developer Intern  
+- 💡 **Focus**: Practical implementation of secure, scalable CSR portal
+
+---
+
+## 🙋 About the Developer
+
+**Tusharkumar Solanki**  
+📍 Gujarat, India  
+🧑‍💻 Passionate Full Stack Developer  
+🚀 Strong grasp on Angular, .NET Core, and PostgreSQL  
+🌱 Always building meaningful software for real-world use
+
+---
+
+## ⭐ Feedback & Contributions
+
+If you like this project, please consider ⭐ starring the repo.  
+For suggestions, feel free to open issues or create pull requests.
+
+Let’s build communities — one mission at a time. 🌍
 
 
